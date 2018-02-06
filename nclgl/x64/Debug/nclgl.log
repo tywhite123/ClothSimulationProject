@@ -1,0 +1,17 @@
+﻿  Camera.cpp
+  Generating Code...
+  Compiling...
+  Window.cpp
+  Shader.cpp
+  SceneNode.cpp
+  OGLRenderer.cpp
+c:\users\tywhi\documents\project & dissertation\project\nclgl\oglrenderer.cpp(413): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  OBJMesh.cpp
+c:\users\tywhi\documents\project & dissertation\project\nclgl\objmesh.cpp(170): warning C4267: '=': conversion from 'size_t' to 'GLuint', possible loss of data
+  Mesh.cpp
+c:\users\tywhi\documents\project & dissertation\project\nclgl\mesh.cpp(121): warning C4267: '=': conversion from 'size_t' to 'GLuint', possible loss of data
+c:\users\tywhi\documents\project & dissertation\project\nclgl\mesh.cpp(127): warning C4018: '<': signed/unsigned mismatch
+  HeightMap.cpp
+  Frustum.cpp
+  Generating Code...
+  nclgl.vcxproj -> C:\Users\tywhi\Documents\Project & Dissertation\Project\ClothSimulation\x64\Debug\nclgl.lib

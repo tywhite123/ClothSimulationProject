@@ -1,0 +1,125 @@
+﻿  image_DXT.c
+image_DXT.c(92): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+  image_helper.c
+image_helper.c(325): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+image_helper.c(366): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+image_helper.c(373): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+image_helper.c(415): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+image_helper.c(422): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  SOIL.c
+SOIL.c(1719): warning C4018: '<=': signed/unsigned mismatch
+SOIL.c(1729): warning C4018: '<': signed/unsigned mismatch
+SOIL.c(1841): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+  stb_image_aug.c
+stb_image_aug.c(177): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+stb_image_aug.c(251): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+stb_image_aug.c(303): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+stb_image_aug.c(1469): warning C4138: '*/' found outside of comment
+stb_image_aug.c(1471): error C2146: syntax error: missing ';' before identifier 'res_comp'
+stb_image_aug.c(1471): error C2065: 'res_comp': undeclared identifier
+stb_image_aug.c(1471): error C2109: subscript requires array or pointer type
+stb_image_aug.c(1474): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1474): error C2296: '*': illegal, left operand has type 'uint8 *'
+stb_image_aug.c(1474): error C2065: 'res_comp': undeclared identifier
+stb_image_aug.c(1474): error C2109: subscript requires array or pointer type
+stb_image_aug.c(1481): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1481): error C2223: left of '->hs' must point to struct/union
+stb_image_aug.c(1482): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1482): error C2223: left of '->vs' must point to struct/union
+stb_image_aug.c(1483): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1483): error C2223: left of '->ystep' must point to struct/union
+stb_image_aug.c(1483): error C2223: left of '->vs' must point to struct/union
+stb_image_aug.c(1484): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1484): error C2223: left of '->w_lores' must point to struct/union
+stb_image_aug.c(1484): error C2223: left of '->hs' must point to struct/union
+stb_image_aug.c(1485): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1485): error C2223: left of '->ypos' must point to struct/union
+stb_image_aug.c(1486): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1486): error C2223: left of '->line0' must point to struct/union
+stb_image_aug.c(1486): error C2223: left of '->line1' must point to struct/union
+stb_image_aug.c(1488): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1488): error C2223: left of '->hs' must point to struct/union
+stb_image_aug.c(1488): error C2223: left of '->vs' must point to struct/union
+stb_image_aug.c(1488): error C2223: left of '->resample' must point to struct/union
+stb_image_aug.c(1489): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1489): error C2223: left of '->hs' must point to struct/union
+stb_image_aug.c(1489): error C2223: left of '->vs' must point to struct/union
+stb_image_aug.c(1489): error C2223: left of '->resample' must point to struct/union
+stb_image_aug.c(1490): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1490): error C2223: left of '->hs' must point to struct/union
+stb_image_aug.c(1490): error C2223: left of '->vs' must point to struct/union
+stb_image_aug.c(1490): error C2223: left of '->resample' must point to struct/union
+stb_image_aug.c(1491): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1491): error C2223: left of '->hs' must point to struct/union
+stb_image_aug.c(1491): error C2223: left of '->vs' must point to struct/union
+stb_image_aug.c(1491): error C2223: left of '->resample' must point to struct/union
+stb_image_aug.c(1492): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1492): error C2223: left of '->resample' must point to struct/union
+stb_image_aug.c(1503): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1503): error C2296: '*': illegal, left operand has type 'uint8 *'
+stb_image_aug.c(1503): error C2065: 'res_comp': undeclared identifier
+stb_image_aug.c(1503): error C2109: subscript requires array or pointer type
+stb_image_aug.c(1504): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1504): error C2223: left of '->ystep' must point to struct/union
+stb_image_aug.c(1504): error C2223: left of '->vs' must point to struct/union
+stb_image_aug.c(1506): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1506): error C2223: left of '->line1' must point to struct/union
+stb_image_aug.c(1506): error C2223: left of '->line0' must point to struct/union
+stb_image_aug.c(1507): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1507): error C2223: left of '->line0' must point to struct/union
+stb_image_aug.c(1507): error C2223: left of '->line1' must point to struct/union
+stb_image_aug.c(1508): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1508): error C2223: left of '->w_lores' must point to struct/union
+stb_image_aug.c(1508): error C2223: left of '->hs' must point to struct/union
+stb_image_aug.c(1508): error C2059: syntax error: ')'
+stb_image_aug.c(1509): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1509): error C2223: left of '->ystep' must point to struct/union
+stb_image_aug.c(1509): error C2223: left of '->vs' must point to struct/union
+stb_image_aug.c(1510): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1510): error C2223: left of '->ystep' must point to struct/union
+stb_image_aug.c(1511): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1511): error C2223: left of '->line0' must point to struct/union
+stb_image_aug.c(1511): error C2223: left of '->line1' must point to struct/union
+stb_image_aug.c(1512): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1512): error C2223: left of '->ypos' must point to struct/union
+stb_image_aug.c(1513): error C2065: 'r': undeclared identifier
+stb_image_aug.c(1513): error C2223: left of '->line1' must point to struct/union
+stb_image_aug.c(1518): error C2059: syntax error: 'if'
+stb_image_aug.c(1525): warning C4552: '<': operator has no effect; expected operator with side-effect
+stb_image_aug.c(1525): error C2143: syntax error: missing ';' before ')'
+stb_image_aug.c(1530): error C2181: illegal else without matching if
+stb_image_aug.c(1532): error C2059: syntax error: 'if'
+stb_image_aug.c(1533): warning C4552: '<': operator has no effect; expected operator with side-effect
+stb_image_aug.c(1533): error C2143: syntax error: missing ';' before ')'
+stb_image_aug.c(1534): error C2181: illegal else without matching if
+stb_image_aug.c(1535): error C2065: 'out': undeclared identifier
+stb_image_aug.c(1535): error C2100: illegal indirection
+stb_image_aug.c(1535): error C2106: '=': left operand must be l-value
+stb_image_aug.c(1542): error C2065: 'output': undeclared identifier
+stb_image_aug.c(1542): warning C4047: 'return': 'uint8 *' differs in levels of indirection from 'int'
+stb_image_aug.c(1544): error C2059: syntax error: '}'
+stb_image_aug.c(1557): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+stb_image_aug.c(2394): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+stb_image_aug.c(2709): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+stb_image_aug.c(2995): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+stb_image_aug.c(3209): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+stb_image_aug.c(3548): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+stb_image_aug.c(3644): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+c:\users\tywhi\documents\project & dissertation\project\soil\soil\stbi_DDS_aug_c.h(362): warning C4018: '>': signed/unsigned mismatch
+c:\users\tywhi\documents\project & dissertation\project\soil\soil\stbi_DDS_aug_c.h(366): warning C4018: '>': signed/unsigned mismatch
+c:\users\tywhi\documents\project & dissertation\project\soil\soil\stbi_DDS_aug_c.h(390): warning C4018: '<': signed/unsigned mismatch
+c:\users\tywhi\documents\project & dissertation\project\soil\soil\stbi_DDS_aug_c.h(427): warning C4018: '<': signed/unsigned mismatch
+c:\users\tywhi\documents\project & dissertation\project\soil\soil\stbi_DDS_aug_c.h(498): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
