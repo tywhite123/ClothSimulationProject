@@ -29,5 +29,10 @@ void Add::AddVertByRand()
 	cudaGraphicsMapResources(1, &vertexBuf, 0);
 	cudaGraphicsResourceGetMappedPointer((void **)&tmpVertexPointer, &tmpVertexPointerSize, vertexBuf);
 
+	dim3 block(256, 1, 1);
 
+
+	add << <1, block >> > (2, 4, 5);
+
+	cudaGraphicsUnmapResources(1, &vertexBuf, 0);
 }
