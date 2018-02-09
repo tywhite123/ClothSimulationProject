@@ -22,17 +22,10 @@ Add::~Add()
 
 }
 
-void Add::AddVertByRand()
+void Add::AddVertByRand(HeightMap * map)
 {
-	size_t tmpVertexPointerSize;
-	float3* tmpVertexPointer;
-	cudaGraphicsMapResources(1, &vertexBuf, 0);
-	cudaGraphicsResourceGetMappedPointer((void **)&tmpVertexPointer, &tmpVertexPointerSize, vertexBuf);
+	cudaGraphicsGLRegisterBuffer(&vertexBuf, map->getVertexBuffer(), cudaGraphicsMapFlagsNone);
 
 	dim3 block(256, 1, 1);
-
-
-	add << <1, block >> > (2, 4, 5);
-
-	cudaGraphicsUnmapResources(1, &vertexBuf, 0);
+	//dim3 grid((size + block.x - 1) / block.x, 1, 1);
 }
