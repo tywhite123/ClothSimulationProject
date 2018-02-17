@@ -1,11 +1,13 @@
 #include "Renderer.h"
 
+
 Renderer::Renderer(Window &parent) : OGLRenderer(parent)
 {
 	heightMap = new HeightMap(TEXTUREDIR"terrain.raw");
 	camera = new Camera();
 	//sphere = Mesh::GenerateSphere();
 
+	add = new Add();
 
 
 	camera->SetPosition(Vector3(2363.0f, 768.0f, 4961.0f));
@@ -26,6 +28,9 @@ Renderer::Renderer(Window &parent) : OGLRenderer(parent)
 
 	projMatrix = Matrix4::Perspective(1.0f, 10000.0f, (float)width / (float)height, 45.0f);
 
+	
+	add->BindBuffers(heightMap);
+	
 	glEnable(GL_DEPTH_TEST);
 	//glEnable(GL_CULL_FACE);
 	//glCullFace(GL_BACK);
@@ -45,6 +50,11 @@ void Renderer::UpdateScene(float msec)
 {
 	camera->UpdateCamera(msec);
 	viewMatrix = camera->BuildViewMatrix();
+
+
+	time += msec;
+
+	add->AddByRand(heightMap->GetNumVerts(), time);
 	
 }
 

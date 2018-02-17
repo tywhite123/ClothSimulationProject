@@ -1,25 +1,25 @@
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\nclgl.pdb
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\nclgl.idb
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\camera.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\frustum.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\gametimer.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\heightmap.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\keyboard.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\matrix4.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\mesh.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\mouse.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\objmesh.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\oglrenderer.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\plane.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\quaternion.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\scenenode.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\shader.obj
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\window.obj
-c:\users\tywhi\documents\project & dissertation\project\clothsimulation\x64\debug\nclgl.lib
-c:\users\tywhi\documents\project & dissertation\project\clothsimulation\x64\debug\nclgl.pdb
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\nclgl.tlog\cl.command.1.tlog
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\nclgl.tlog\cl.read.1.tlog
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\nclgl.tlog\cl.write.1.tlog
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\nclgl.tlog\lib-link.read.1.tlog
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\nclgl.tlog\lib-link.write.1.tlog
-c:\users\tywhi\documents\project & dissertation\project\nclgl\x64\debug\nclgl.tlog\lib.command.1.tlog
+h:\clothsim\nclgl\x64\debug\nclgl.pdb
+h:\clothsim\nclgl\x64\debug\nclgl.idb
+h:\clothsim\nclgl\x64\debug\camera.obj
+h:\clothsim\nclgl\x64\debug\frustum.obj
+h:\clothsim\nclgl\x64\debug\gametimer.obj
+h:\clothsim\nclgl\x64\debug\heightmap.obj
+h:\clothsim\nclgl\x64\debug\keyboard.obj
+h:\clothsim\nclgl\x64\debug\matrix4.obj
+h:\clothsim\nclgl\x64\debug\mesh.obj
+h:\clothsim\nclgl\x64\debug\mouse.obj
+h:\clothsim\nclgl\x64\debug\objmesh.obj
+h:\clothsim\nclgl\x64\debug\oglrenderer.obj
+h:\clothsim\nclgl\x64\debug\plane.obj
+h:\clothsim\nclgl\x64\debug\quaternion.obj
+h:\clothsim\nclgl\x64\debug\scenenode.obj
+h:\clothsim\nclgl\x64\debug\shader.obj
+h:\clothsim\nclgl\x64\debug\window.obj
+h:\clothsim\clothsimulation\x64\debug\nclgl.lib
+h:\clothsim\clothsimulation\x64\debug\nclgl.pdb
+h:\clothsim\nclgl\x64\debug\nclgl.tlog\cl.command.1.tlog
+h:\clothsim\nclgl\x64\debug\nclgl.tlog\cl.read.1.tlog
+h:\clothsim\nclgl\x64\debug\nclgl.tlog\cl.write.1.tlog
+h:\clothsim\nclgl\x64\debug\nclgl.tlog\lib-link.read.1.tlog
+h:\clothsim\nclgl\x64\debug\nclgl.tlog\lib-link.write.1.tlog
+h:\clothsim\nclgl\x64\debug\nclgl.tlog\lib.command.1.tlog

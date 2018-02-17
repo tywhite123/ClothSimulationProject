@@ -22,6 +22,8 @@ public:
 	void SetTexture(GLuint tex) { texture = tex; }
 	GLuint GetTexture() { return texture; }
 
+	GLuint GetNumVerts() { return numVertices; }
+
 protected:
 	void BufferData();
 

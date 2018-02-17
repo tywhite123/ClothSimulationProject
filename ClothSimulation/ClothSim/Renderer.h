@@ -1,6 +1,8 @@
 #pragma once
 
 #include "../../nclgl/OGLRenderer.h"
+
+#include "add.cuh"
 #include "../../nclgl/Camera.h"
 #include "../../nclgl/HeightMap.h"
 
@@ -17,4 +19,8 @@ protected:
 	HeightMap* heightMap;
 	Camera* camera;
 	Mesh* sphere;
+	Add* add;
+
+	float time = 0;
+
 };

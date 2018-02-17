@@ -1,7 +1,6 @@
+#include "..\..\nclgl\HeightMap.h"
 #include <cuda_runtime.h>
 #include <cuda_gl_interop.h>
-
-#include "..\..\nclgl\HeightMap.h"
 
 class Add
 {
@@ -9,7 +8,9 @@ public:
 	Add();
 	~Add();
 
-	void AddVertByRand(HeightMap* map);
+	void BindBuffers(HeightMap* map);
+
+	void AddByRand(unsigned int size, float time);
 
 private:
 	cudaGraphicsResource* vertexBuf;
