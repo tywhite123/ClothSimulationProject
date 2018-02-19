@@ -5,6 +5,7 @@
 #include "add.cuh"
 #include "../../nclgl/Camera.h"
 #include "../../nclgl/HeightMap.h"
+#include "../../nclgl/SceneNode.h"
 
 class Renderer : public OGLRenderer
 {
@@ -20,6 +21,7 @@ protected:
 	Camera* camera;
 	Mesh* sphere;
 	Add* add;
+	SceneNode* root;
 
 	float time = 0;
 

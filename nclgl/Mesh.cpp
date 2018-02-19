@@ -104,7 +104,7 @@ Mesh* Mesh::GenerateQuad() {
 
 Mesh * Mesh::GenerateSphere()
 {
-	const int RADIUS = 10;
+	const int RADIUS = 1000;
 	const Vector3 center = Vector3(0, 0, 0);
 	vector<Vector3> vertices = vector<Vector3>();
 	for (float phi = 0.0f; phi < 2 * PI; phi += PI / 10) {
@@ -123,10 +123,20 @@ Mesh * Mesh::GenerateSphere()
 
 	m->vertices = new Vector3[m->numVertices];
 	m->colours = new Vector4[m->numVertices];
+	m->textureCoords = new Vector2[m->numVertices];
 
 	for (int i = 0; i < m->numVertices; ++i) {
 		m->vertices[i] = vertices[i];
 		m->colours[i] = Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+		if (i % 3 == 0) {
+			m->textureCoords[0] = Vector2(0.0f, 1.0f);
+		}
+		else if (i % 3 == 1) {
+			m->textureCoords[1] = Vector2(0.0f, 0.0f);
+		}
+		else {
+			m->textureCoords[2] = Vector2(1.0f, 0.0f);
+		}
 	}
 
 	m->BufferData();
