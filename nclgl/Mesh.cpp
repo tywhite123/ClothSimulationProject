@@ -107,12 +107,17 @@ Mesh * Mesh::GenerateSphere()
 	const int RADIUS = 1000;
 	const Vector3 center = Vector3(0, 0, 0);
 	vector<Vector3> vertices = vector<Vector3>();
+	//for (float theta = 0.0f; theta < PI; theta += PI / 10) {
 	for (float phi = 0.0f; phi < 2 * PI; phi += PI / 10) {
 		for (float theta = 0.0f; theta < PI; theta += PI / 10) {
 			float x, y, z;
-			x = RADIUS * cos(phi) * sin(theta) + center.x;
-			y = RADIUS * sin(phi) * sin(theta) + center.y;
-			z = RADIUS * cos(theta) + center.z;
+			x = RADIUS * cos(theta) * sin(phi) + center.x;
+			y = RADIUS * sin(theta) * sin(phi) + center.y;
+			z = RADIUS * cos(phi) + center.z;
+			vertices.push_back(Vector3(x, y, z));
+			x = RADIUS * cos(theta) * sin(phi + PI/10) + center.x;
+			y = RADIUS * sin(theta) * sin(phi + PI/10) + center.y;
+			z = RADIUS * cos(phi + PI/10) + center.z;
 			vertices.push_back(Vector3(x, y, z));
 		}
 	}
