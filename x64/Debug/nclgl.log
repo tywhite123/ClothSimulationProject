@@ -1,4 +1,4 @@
 ﻿  Mesh.cpp
 h:\clothsim\nclgl\mesh.cpp(126): warning C4267: '=': conversion from 'size_t' to 'GLuint', possible loss of data
-h:\clothsim\nclgl\mesh.cpp(133): warning C4018: '<': signed/unsigned mismatch
+h:\clothsim\nclgl\mesh.cpp(135): warning C4018: '<': signed/unsigned mismatch
   nclgl.vcxproj -> H:\ClothSim\ClothSimulation\x64\Debug\nclgl.lib
