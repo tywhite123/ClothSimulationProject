@@ -70,8 +70,8 @@ void Renderer::UpdateScene(float msec)
 
 	time += msec;
 
-	add->AddByRand(heightMap->GetNumVerts(), time);
-	
+	//add->AddByRand(heightMap->GetNumVerts(), time);
+	//add->IntergrateTest(heightMap->GetNumVerts(), msec, 0.99, Vector3(0.0, -1.0, 0.0));
 }
 
 void Renderer::RenderScene()
@@ -83,8 +83,8 @@ void Renderer::RenderScene()
 
 	glUniform1i(glGetUniformLocation(currentShader->GetProgram(), "diffuseTex"), 0);
 
-	heightMap->Draw();
-	sphere->Draw();
+	//heightMap->Draw();
+	//sphere->Draw();
 
 	
 

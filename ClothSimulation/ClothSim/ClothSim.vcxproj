@@ -126,11 +126,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cloth.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="add.cuh" />
+    <ClInclude Include="Cloth.h" />
     <ClInclude Include="Renderer.h" />
   </ItemGroup>
   <ItemGroup>
