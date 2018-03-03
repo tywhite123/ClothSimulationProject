@@ -83,7 +83,7 @@ void Renderer::RenderScene()
 
 	glUniform1i(glGetUniformLocation(currentShader->GetProgram(), "diffuseTex"), 0);
 
-	//heightMap->Draw();
+	heightMap->Draw();
 	//sphere->Draw();
 
 	
