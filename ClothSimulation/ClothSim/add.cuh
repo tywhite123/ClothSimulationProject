@@ -5,7 +5,7 @@
 class Add
 {
 public:
-	Add();
+	Add(unsigned int size);
 	~Add();
 
 	void BindBuffers(HeightMap* map);
@@ -15,4 +15,5 @@ public:
 
 private:
 	cudaGraphicsResource* vertexBuf;
+	float3* oldPositions;
 };

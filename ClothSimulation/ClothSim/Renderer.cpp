@@ -7,7 +7,7 @@ Renderer::Renderer(Window &parent) : OGLRenderer(parent)
 	camera = new Camera();
 	sphere = Mesh::GenerateSphere();
 
-	add = new Add();
+	add = new Add(heightMap->GetNumVerts());
 
 
 	camera->SetPosition(Vector3(2363.0f, 768.0f, 4961.0f));
@@ -71,7 +71,7 @@ void Renderer::UpdateScene(float msec)
 	time += msec;
 
 	//add->AddByRand(heightMap->GetNumVerts(), time);
-	//add->IntergrateTest(heightMap->GetNumVerts(), msec, 0.99, Vector3(0.0, -1.0, 0.0));
+	add->IntergrateTest(heightMap->GetNumVerts(), msec, 0.99, Vector3(0.0, -9.8f, 0.0));
 }
 
 void Renderer::RenderScene()
@@ -84,7 +84,7 @@ void Renderer::RenderScene()
 	glUniform1i(glGetUniformLocation(currentShader->GetProgram(), "diffuseTex"), 0);
 
 	heightMap->Draw();
-	//sphere->Draw();
+	sphere->Draw();
 
 	
 

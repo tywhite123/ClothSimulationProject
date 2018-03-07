@@ -29,32 +29,36 @@ void add(unsigned int size, float time, float3* vertexBuf) {
 
 
 __global__
-void Integrate(unsigned int size, float time, float3* vertexBuf, float3 grav, float damping) {
+void Integrate(unsigned int size, float time, float3* vertexBuf, float3 grav, float damping, float3* oldPositions) {
 	int index = blockIdx.x * blockDim.x + threadIdx.x;
 	if (index >= size)
 		return;
 
 	float3 pos = vertexBuf[index];
-	float3 oldPos = pos;
-
-	//pos.x = pos.x + damping + grav.x*(time*time);
-	pos.y = pos.y - damping + grav.y*(time*time);
-	//pos.y = pos.y + damping + grav.z*(time*time);
+	float3 old = oldPositions[index];
+	float3 temp = pos;
+	 
+	//pos.x = pos.x + damping * (pos.x-old.x) + grav.x * (time*time);
+	pos.y = pos.y + damping * (pos.y-old.y) + grav.y * (time*time);
+	//pos.z = pos.z + damping * (pos.z-old.z) + grav.z * (time*time);
+	//pos = pos  + (pos - old) * damping + grav * (time*time);
 
 	vertexBuf[index] = pos;
+	oldPositions[index] = temp;
 
 
 
 }
 
 
-Add::Add() 
+Add::Add(unsigned int size)
 {
+	cudaMalloc((void**)&oldPositions, size * sizeof(float3));
 }
 
 Add::~Add()
 {
-
+	cudaFree(oldPositions);
 }
 
 void Add::BindBuffers(HeightMap * map)
@@ -96,7 +100,7 @@ void Add::IntergrateTest(unsigned int size, float time, float damping, Vector3 g
 	grav.y = gravity.y;
 	grav.z = gravity.z;
 
-	Integrate << <grid, block >> > (size, 0.01, tmpVertexPointer, grav, damping);
+	Integrate << <grid, block >> > (size, 0.25, tmpVertexPointer, grav, damping, oldPositions);
 
 	cudaGraphicsUnmapResources(1, &vertexBuf, 0);
 
