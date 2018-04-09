@@ -1,14 +1,17 @@
 #include "Renderer.h"
 
+
 Renderer::Renderer(Window &parent) : OGLRenderer(parent)
 {
 	heightMap = new HeightMap(TEXTUREDIR"terrain.raw");
 	camera = new Camera();
-	//sphere = Mesh::GenerateSphere();
+	sphere = Mesh::GenerateSphere();
 
+	add = new Add(heightMap->GetNumVerts());
 
 
 	camera->SetPosition(Vector3(2363.0f, 768.0f, 4961.0f));
+
 
 	currentShader = new Shader(SHADERDIR"TexturedVertex.glsl", SHADERDIR"TexturedFragment.glsl");
 
@@ -22,10 +25,28 @@ Renderer::Renderer(Window &parent) : OGLRenderer(parent)
 		return;
 	}
 
+
 	SetTextureRepeating(heightMap->GetTexture(), true);
+
+	sphere->SetTexture(SOIL_load_OGL_texture(TEXTUREDIR"Barren Reds.JPG", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS));
+
+	if (!sphere->GetTexture()) {
+		return;
+	}
+
+	SetTextureRepeating(sphere->GetTexture(), true);
+
+	/*root = new SceneNode();
+
+	SceneNode* cloth = new SceneNode();
+	cloth->SetMesh(heightMap);
+	root->AddChild;*/
 
 	projMatrix = Matrix4::Perspective(1.0f, 10000.0f, (float)width / (float)height, 45.0f);
 
+	
+	add->BindBuffers(heightMap);
+	
 	glEnable(GL_DEPTH_TEST);
 	//glEnable(GL_CULL_FACE);
 	//glCullFace(GL_BACK);
@@ -45,7 +66,12 @@ void Renderer::UpdateScene(float msec)
 {
 	camera->UpdateCamera(msec);
 	viewMatrix = camera->BuildViewMatrix();
-	
+
+
+	time += msec;
+
+	//add->AddByRand(heightMap->GetNumVerts(), time);
+	add->IntergrateTest(heightMap->GetNumVerts(), msec, 0.99, Vector3(0.0, -9.8f, 0.0));
 }
 
 void Renderer::RenderScene()
@@ -58,7 +84,9 @@ void Renderer::RenderScene()
 	glUniform1i(glGetUniformLocation(currentShader->GetProgram(), "diffuseTex"), 0);
 
 	heightMap->Draw();
-	//sphere->Draw();
+	sphere->Draw();
+
+	
 
 	glUseProgram(0);
 	SwapBuffers();

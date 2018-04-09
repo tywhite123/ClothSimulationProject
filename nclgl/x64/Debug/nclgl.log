@@ -4,13 +4,13 @@
   Quaternion.cpp
   Plane.cpp
   OGLRenderer.cpp
-c:\users\tywhi\documents\project & dissertation\project\clothsimulationproject\nclgl\oglrenderer.cpp(413): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+h:\clothsim\nclgl\oglrenderer.cpp(413): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
   OBJMesh.cpp
-c:\users\tywhi\documents\project & dissertation\project\clothsimulationproject\nclgl\objmesh.cpp(170): warning C4267: '=': conversion from 'size_t' to 'GLuint', possible loss of data
+h:\clothsim\nclgl\objmesh.cpp(170): warning C4267: '=': conversion from 'size_t' to 'GLuint', possible loss of data
   Mouse.cpp
   Mesh.cpp
-c:\users\tywhi\documents\project & dissertation\project\clothsimulationproject\nclgl\mesh.cpp(121): warning C4267: '=': conversion from 'size_t' to 'GLuint', possible loss of data
-c:\users\tywhi\documents\project & dissertation\project\clothsimulationproject\nclgl\mesh.cpp(127): warning C4018: '<': signed/unsigned mismatch
+h:\clothsim\nclgl\mesh.cpp(121): warning C4267: '=': conversion from 'size_t' to 'GLuint', possible loss of data
+h:\clothsim\nclgl\mesh.cpp(127): warning C4018: '<': signed/unsigned mismatch
   Matrix4.cpp
   Keyboard.cpp
   HeightMap.cpp
@@ -18,4 +18,4 @@ c:\users\tywhi\documents\project & dissertation\project\clothsimulationproject\n
   Frustum.cpp
   Camera.cpp
   Generating Code...
-  nclgl.vcxproj -> C:\Users\tywhi\Documents\Project & Dissertation\Project\ClothSimulationProject\ClothSimulation\x64\Debug\nclgl.lib
+  nclgl.vcxproj -> H:\ClothSim\ClothSimulation\x64\Debug\nclgl.lib

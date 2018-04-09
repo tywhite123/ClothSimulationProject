@@ -21,12 +21,18 @@
     <ClCompile Include="Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Cloth.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="add.cuh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cloth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

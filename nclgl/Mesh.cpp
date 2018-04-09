@@ -104,15 +104,20 @@ Mesh* Mesh::GenerateQuad() {
 
 Mesh * Mesh::GenerateSphere()
 {
-	const int RADIUS = 10;
+	const int RADIUS = 1000;
 	const Vector3 center = Vector3(0, 0, 0);
 	vector<Vector3> vertices = vector<Vector3>();
-	for (float phi = 0.0f; phi < 2 * PI; phi += PI / 10) {
-		for (float theta = 0.0f; theta < PI; theta += PI / 10) {
+	//for (float theta = 0.0f; theta < PI; theta += PI / 10) {
+	for (float phi = 0.0f; phi < 2.01f * PI; phi += PI / 20) {
+		for (float theta = 0.0f; theta < PI+0.125f; theta += PI / 20) {
 			float x, y, z;
-			x = RADIUS * cos(phi) * sin(theta) + center.x;
-			y = RADIUS * sin(phi) * sin(theta) + center.y;
-			z = RADIUS * cos(theta) + center.z;
+			x = RADIUS * cos(theta) * sin(phi) + center.x;
+			y = RADIUS * sin(theta) * sin(phi) + center.y;
+			z = RADIUS * cos(phi) + center.z;
+			vertices.push_back(Vector3(x, y, z));
+			x = RADIUS * cos(theta) * sin(phi + PI/20) + center.x;
+			y = RADIUS * sin(theta) * sin(phi + PI/20) + center.y;
+			z = RADIUS * cos(phi + PI/20) + center.z;
 			vertices.push_back(Vector3(x, y, z));
 		}
 	}
@@ -121,12 +126,25 @@ Mesh * Mesh::GenerateSphere()
 	m->numVertices = vertices.size();
 	m->type = GL_TRIANGLE_STRIP;
 
+
+
 	m->vertices = new Vector3[m->numVertices];
 	m->colours = new Vector4[m->numVertices];
+	m->textureCoords = new Vector2[m->numVertices];
 
 	for (int i = 0; i < m->numVertices; ++i) {
 		m->vertices[i] = vertices[i];
 		m->colours[i] = Vector4(1.0f, 1.0f, 1.0f, 1.0f);
+		if (i % 3 == 0) {
+			m->textureCoords[i] = Vector2(0.0f, 0.0f);
+		}
+		else if (i % 3 == 1) {
+			m->textureCoords[i] = Vector2(0.0f,	1.0f);
+		}
+		else {
+			m->textureCoords[i] = Vector2(1.0f, 0.0f);
+			m->textureCoords[i] = Vector2(1.0f, 1.0f);
+		}
 	}
 
 	m->BufferData();
