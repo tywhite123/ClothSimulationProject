@@ -39,9 +39,17 @@ void Integrate(unsigned int size, float time, float3* vertexBuf, float3 grav, fl
 	float3 temp = pos;
 	 
 	//pos.x = pos.x + damping * (pos.x-old.x) + grav.x * (time*time);
-	pos.y = pos.y + damping * (pos.y-old.y) + grav.y * (time*time);
+	if (pos.y >= -5000.0f) {
+		pos.y = pos.y + damping * (pos.y-old.y) + grav.y * (time*time);
+	}
+	
 	//pos.z = pos.z + damping * (pos.z-old.z) + grav.z * (time*time);
 	//pos = pos  + (pos - old) * damping + grav * (time*time);
+
+	/*if (pos.y < 0.0f) {
+		pos.y = 0.0f;
+	}*/
+
 
 	vertexBuf[index] = pos;
 	oldPositions[index] = temp;
@@ -50,6 +58,49 @@ void Integrate(unsigned int size, float time, float3* vertexBuf, float3 grav, fl
 
 }
 
+__global__
+void FloorConstraint(float3* vertexBuf, float floor, float size) {
+	int index = blockIdx.x * blockDim.x + threadIdx.x;
+	if (index >= size)
+		return;
+
+	float3 pos = vertexBuf[index];
+
+	if (pos.y < floor) {
+		pos.y = floor;
+	}
+
+	vertexBuf[index] = pos;
+
+}
+
+
+__global__
+void SphereConstraint(float3* vertexBuf, float3 spherePoint, float size, float radius) {
+	int index = blockIdx.x * blockDim.x + threadIdx.x;
+	if (index >= size)
+		return;
+
+	float3 pos = vertexBuf[index];
+
+	float3 delta;
+	delta.x = pos.x - spherePoint.x;
+	delta.y = pos.y - spherePoint.y;
+	delta.z = pos.z - spherePoint.z;
+
+	float dist = sqrt((delta.x*delta.x)+(delta.y*delta.y)+(delta.z*delta.z));
+
+	if (dist < radius) {
+		pos.x = spherePoint.x + delta.x *(radius / dist);
+		pos.y = spherePoint.y + delta.y *(radius / dist);
+		pos.z = spherePoint.z + delta.z *(radius / dist);
+
+	}
+
+
+	vertexBuf[index] = pos;
+
+}
 
 Add::Add(unsigned int size)
 {
@@ -100,7 +151,15 @@ void Add::IntergrateTest(unsigned int size, float time, float damping, Vector3 g
 	grav.y = gravity.y;
 	grav.z = gravity.z;
 
+	//-2000.0f, 2000.0f, -2000.0f
+	float3 spherePoint;
+	spherePoint.x = 2000.0f;
+	spherePoint.y = -2000.0f;
+	spherePoint.z = 2000.0f;
+
 	Integrate << <grid, block >> > (size, 0.25, tmpVertexPointer, grav, damping, oldPositions);
+	//FloorConstraint << <grid, block >> > (tmpVertexPointer, 0.0f, size);
+	SphereConstraint << <grid, block >> > (tmpVertexPointer, spherePoint, size, 1010);
 
 	cudaGraphicsUnmapResources(1, &vertexBuf, 0);
 

@@ -17,6 +17,9 @@ public:
 	virtual void UpdateScene(float msec);
 
 protected:
+
+	void DrawNode(SceneNode* n);
+
 	HeightMap* heightMap;
 	Camera* camera;
 	Mesh* sphere;

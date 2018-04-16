@@ -8,8 +8,6 @@ Renderer::Renderer(Window &parent) : OGLRenderer(parent)
 	sphere = Mesh::GenerateSphere();
 
 	add = new Add(heightMap->GetNumVerts());
-
-
 	camera->SetPosition(Vector3(2363.0f, 768.0f, 4961.0f));
 
 
@@ -36,11 +34,18 @@ Renderer::Renderer(Window &parent) : OGLRenderer(parent)
 
 	SetTextureRepeating(sphere->GetTexture(), true);
 
-	/*root = new SceneNode();
+	root = new SceneNode();
 
 	SceneNode* cloth = new SceneNode();
 	cloth->SetMesh(heightMap);
-	root->AddChild;*/
+	cloth->SetTransform(Matrix4::Translation(Vector3(-2000.0f, 2000.0f, -2000.0f)));
+	root->AddChild(cloth);
+
+	SceneNode* sphereNode = new SceneNode();
+	sphereNode->SetMesh(sphere);
+	sphereNode->SetTransform(Matrix4::Translation(Vector3(0.0f, 0.0f, 0.0f)));
+	root->AddChild(sphereNode);
+
 
 	projMatrix = Matrix4::Perspective(1.0f, 10000.0f, (float)width / (float)height, 45.0f);
 
@@ -66,12 +71,30 @@ void Renderer::UpdateScene(float msec)
 {
 	camera->UpdateCamera(msec);
 	viewMatrix = camera->BuildViewMatrix();
-
+	root->Update(msec);
 
 	time += msec;
 
 	//add->AddByRand(heightMap->GetNumVerts(), time);
 	add->IntergrateTest(heightMap->GetNumVerts(), msec, 0.99, Vector3(0.0, -9.8f, 0.0));
+}
+
+void Renderer::DrawNode(SceneNode * n)
+{
+	if (n->GetMesh())
+	{
+		Matrix4 transform = n->GetWorldTransform() * Matrix4::Scale(n->GetModelScale());
+
+		glUniformMatrix4fv(glGetUniformLocation(currentShader->GetProgram(), "modelMatrix"), 1, false, (float*)&transform);
+		glUniform1i(glGetUniformLocation(currentShader->GetProgram(), "useTexture"), (int)n->GetMesh()->GetTexture());
+
+		n->Draw();
+	}
+
+	for (vector<SceneNode*>::const_iterator i = n->GetChildIteratorStart(); i != n->GetChildIteratorEnd(); ++i)
+	{
+		DrawNode(*i);
+	}
 }
 
 void Renderer::RenderScene()
@@ -83,10 +106,10 @@ void Renderer::RenderScene()
 
 	glUniform1i(glGetUniformLocation(currentShader->GetProgram(), "diffuseTex"), 0);
 
-	heightMap->Draw();
-	sphere->Draw();
+	/*heightMap->Draw();
+	sphere->Draw();*/
 
-	
+	DrawNode(root);
 
 	glUseProgram(0);
 	SwapBuffers();
