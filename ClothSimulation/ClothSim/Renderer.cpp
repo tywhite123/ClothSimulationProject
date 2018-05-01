@@ -9,6 +9,7 @@ Renderer::Renderer(Window &parent) : OGLRenderer(parent)
 
 	add = new Add(heightMap->GetNumVerts());
 	camera->SetPosition(Vector3(2363.0f, 768.0f, 4961.0f));
+	//cloth = new Cloth(256, 256, heightMap->getXSize(), heightMap->getZSize(), heightMap->getYSize());
 
 
 	currentShader = new Shader(SHADERDIR"TexturedVertex.glsl", SHADERDIR"TexturedFragment.glsl");
@@ -17,7 +18,7 @@ Renderer::Renderer(Window &parent) : OGLRenderer(parent)
 		return;
 	}
 
-	heightMap->SetTexture(SOIL_load_OGL_texture(TEXTUREDIR"Barren Reds.JPG", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS));
+	heightMap->SetTexture(SOIL_load_OGL_texture(TEXTUREDIR"cloth.JPG", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS));
 
 	if (!heightMap->GetTexture()) {
 		return;
@@ -76,7 +77,7 @@ void Renderer::UpdateScene(float msec)
 	time += msec;
 
 	//add->AddByRand(heightMap->GetNumVerts(), time);
-	add->IntergrateTest(heightMap->GetNumVerts(), msec, 0.99, Vector3(0.0, -9.8f, 0.0));
+	add->IntergrateTest(heightMap->GetNumVerts(), msec, 0.999, Vector3(0.0, -9.81f, 0.0)/1);
 }
 
 void Renderer::DrawNode(SceneNode * n)

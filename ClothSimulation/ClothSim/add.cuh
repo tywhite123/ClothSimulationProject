@@ -2,6 +2,8 @@
 #include <cuda_runtime.h>
 #include <cuda_gl_interop.h>
 
+#include "Cloth.h"
+
 class Add
 {
 public:
@@ -15,5 +17,6 @@ public:
 
 private:
 	cudaGraphicsResource* vertexBuf;
+	cudaGraphicsResource* oldPos;
 	float3* oldPositions;
 };

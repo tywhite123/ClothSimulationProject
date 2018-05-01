@@ -22,5 +22,11 @@ public:
 	~HeightMap(void) {};
 
 	GLuint getVertexBuffer() { return bufferObject[VERTEX_BUFFER]; }
+
+	float getXSize() { return vertices[66048].x; }
+	float getYSize() { return vertices[66048].y; }
+	float getZSize() { return vertices[66048].z; }
+	
+	Vector3 getVerticesAt(int x) { return vertices[x]; }
 };
 

@@ -25,6 +25,7 @@ protected:
 	Mesh* sphere;
 	Add* add;
 	SceneNode* root;
+	Cloth* cloth;
 
 	float time = 0;
 
